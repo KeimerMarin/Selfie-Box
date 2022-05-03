@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    font-weight: 500;
+}
+ul {
+    list-style: none;
+}
+/* Cabecera */
+header{
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, #336dff, #2f98c2f0, #5437e4, #25b5f5);
+    height:4rem;
+}
+.nav-main {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    
+}
+.nav-menu{
+    display: flex;
+}
+.nav-menu li{
+    padding: 10px;
+}
+.nav-main ul li a{
+    color: white;
+    padding: 4px;
+}
+.nav-main ul li a:hover{
+    opacity: 0.9;
+    color: rgb(0, 0, 0);
+}
+
+/* Slider */
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgb(83 82 173 / 76%),
+        rgb(213 168 168 / 26%)
+    )
+    ,url(../img/Slider.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.prueba{
+    width: 400px;
+    height: 400px;
+}
+/* Seccion de Servicios */
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+.container {
+    padding: 150px 12px;
+}
+#services{    
+    color: #151948;
+    text-align: center;
+    background: #f9f9f9;
+} 
+.container h2{
+    margin-top: -60px;
+    font-size: 4em;
+}
+.type-service{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 90%;
+    margin: 60px auto;
+    place-items: center;
+    margin-top: 40px;
+}
+.type-service img{
+    width: 100%;
+    height: 250px;
+}
+.card-product{
+    transition: all 300ms;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-color: #7a7a7a;
+    border-radius: 10px;
+    text-align: center;
+}
+.card-product:hover {
+    transform: scale(0.9);
+}
+.card-product h3{
+    margin-top: 10px;  
+    font-size: 2em;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.card-product p{
+    display: flex;
+    margin-bottom: 25vh;
+    font-size: 16px;
+    font-weight: 300;
+}
+ion-icon{
+    font-size: 22px;
+}
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: -80px;
+}
+.button {
+    min-width: 150px;
+    font-size: 17   px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+.button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+button:hover::before, button:focus::before {
+    opacity: 1;
+}
+button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+}
+@keyframes ring {
+    0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    }
+    100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    }
+}
+
+/*
+.type-service{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.container h2{
+    margin-top: 0;
+    font-size: 4em;
+}
+.card-product{
+    padding: 40px;
+    margin: 30px 25px 30px 25px;
+    background-size: 100% 150px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 10px rgb(0 0 0 / 57%);
+    border-radius: 15px;
+}
+.card-product:first-child{
+    background-image: linear-gradient(
+        8deg,
+        rgb(118 178 192 / 40%), 
+        #c8d0d640
+    )
+    ,url(../img/photo-booth.jpeg);
+}
+
+.card-product:nth-child(2){
+    background-image: linear-gradient(
+        8deg,
+        rgb(118 178 192 / 40%), 
+        #c8d0d640
+    )
+    ,url(../img/red-carpet.jpg);
+}
+
+.card-product:nth-child(3){
+    background-image: linear-gradient(
+        8deg,
+        rgb(118 178 192 / 40%), 
+        #c8d0d640
+    )
+    ,url(../img/cotillon-premiun.jpg);
+}
+.card-product:nth-child(4){
+    background-image: linear-gradient(
+        8deg,
+        rgb(118 178 192 / 40%), 
+        #c8d0d640
+    )
+    ,url(../img/personalizacion.jpg);
+}
+.card-product p{
+    display: flex;
+    margin-bottom: 25vh;
+    font-size: 1.25em;
+}
+.card-product .title-product{
+    margin-bottom: 85px;
+}
+.card-product h3{
+    margin-top: 10px;  
+    font-size: 2em;
+    margin-bottom: 50px;
+    text-align: center;
+}
+#title{
+    color: #000000;
+}
+
+
+ */
